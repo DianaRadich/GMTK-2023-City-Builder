@@ -291,7 +291,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 19228686}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 7.899868, y: 14.058171, z: 2.4078188}
+  m_LocalPosition: {x: 8, y: 14.058171, z: 3}
   m_LocalScale: {x: 4, y: 2, z: 4}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -310,10 +310,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 63ec365fa3e41624f8967ebcd007c199, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  nearbyBuildings: []
   block: {fileID: 0}
   currentSeed: {fileID: 0}
-  t: 0
-  isGrown: 0
+  growing: 0
+  canGrow: 0
   conversion: 0
 --- !u!1 &89124295
 GameObject:
@@ -638,7 +639,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 239189700}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 24.649868, y: 15.558171, z: 3.1578188}
+  m_LocalPosition: {x: 24, y: 15.558171, z: 3}
   m_LocalScale: {x: 4, y: 5, z: 4}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -657,10 +658,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 63ec365fa3e41624f8967ebcd007c199, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  nearbyBuildings: []
   block: {fileID: 0}
   currentSeed: {fileID: 0}
-  t: 0
-  isGrown: 0
+  growing: 0
+  canGrow: 0
   conversion: 0
 --- !u!1 &260025835
 GameObject:
@@ -690,7 +692,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 260025835}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 18.649868, y: 15.558171, z: 13.907819}
+  m_LocalPosition: {x: 18.5, y: 15.558171, z: 14}
   m_LocalScale: {x: 4, y: 5, z: 4}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -709,10 +711,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 63ec365fa3e41624f8967ebcd007c199, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  nearbyBuildings: []
   block: {fileID: 0}
   currentSeed: {fileID: 0}
-  t: 0
-  isGrown: 0
+  growing: 0
+  canGrow: 0
   conversion: 0
 --- !u!65 &260025838
 BoxCollider:
@@ -868,7 +871,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 274050673}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 24.399868, y: 14.058171, z: -3.0921812}
+  m_LocalPosition: {x: 24, y: 14.058171, z: -2}
   m_LocalScale: {x: 4, y: 2, z: 4}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -887,10 +890,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 63ec365fa3e41624f8967ebcd007c199, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  nearbyBuildings: []
   block: {fileID: 0}
   currentSeed: {fileID: 0}
-  t: 0
-  isGrown: 0
+  growing: 0
+  canGrow: 0
   conversion: 0
 --- !u!1 &276338113
 GameObject:
@@ -983,7 +987,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 276338113}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 7.399868, y: 15.558171, z: -3.3421812}
+  m_LocalPosition: {x: 8, y: 15.558171, z: -2}
   m_LocalScale: {x: 4, y: 5, z: 4}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1002,10 +1006,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 63ec365fa3e41624f8967ebcd007c199, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  nearbyBuildings: []
   block: {fileID: 0}
   currentSeed: {fileID: 0}
-  t: 0
-  isGrown: 0
+  growing: 0
+  canGrow: 0
   conversion: 0
 --- !u!1 &434768964
 GameObject:
@@ -1098,7 +1103,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 434768964}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 7.399868, y: 15.558171, z: 8.907819}
+  m_LocalPosition: {x: 8, y: 15.558171, z: 9}
   m_LocalScale: {x: 4, y: 5, z: 4}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1117,10 +1122,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 63ec365fa3e41624f8967ebcd007c199, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  nearbyBuildings: []
   block: {fileID: 0}
   currentSeed: {fileID: 0}
-  t: 0
-  isGrown: 0
+  growing: 0
+  canGrow: 0
   conversion: 0
 --- !u!1 &447865445
 GameObject:
@@ -1383,6 +1389,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5dc73714d2d728147b1d803f39133e90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tickTime: 0.2
 --- !u!4 &466718130
 Transform:
   m_ObjectHideFlags: 0
@@ -1837,7 +1844,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 926472612}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 18.649868, y: 15.558171, z: -2.5921812}
+  m_LocalPosition: {x: 18.5, y: 15.558171, z: -2}
   m_LocalScale: {x: 4, y: 5, z: 4}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1856,10 +1863,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 63ec365fa3e41624f8967ebcd007c199, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  nearbyBuildings: []
   block: {fileID: 0}
   currentSeed: {fileID: 0}
-  t: 0
-  isGrown: 0
+  growing: 0
+  canGrow: 0
   conversion: 0
 --- !u!65 &926472615
 BoxCollider:
@@ -2358,7 +2366,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 967768651}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 7.399868, y: 14.558171, z: 14.407819}
+  m_LocalPosition: {x: 8, y: 14.558171, z: 14}
   m_LocalScale: {x: 4, y: 3, z: 4}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2377,10 +2385,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 63ec365fa3e41624f8967ebcd007c199, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  nearbyBuildings: []
   block: {fileID: 0}
   currentSeed: {fileID: 0}
-  t: 0
-  isGrown: 0
+  growing: 0
+  canGrow: 0
   conversion: 0
 --- !u!1 &974832676
 GameObject:
@@ -2473,7 +2482,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 974832676}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 12.649868, y: 16.55817, z: -2.8421812}
+  m_LocalPosition: {x: 13, y: 16.55817, z: -2}
   m_LocalScale: {x: 4, y: 7, z: 4}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2492,10 +2501,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 63ec365fa3e41624f8967ebcd007c199, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  nearbyBuildings: []
   block: {fileID: 0}
   currentSeed: {fileID: 0}
-  t: 0
-  isGrown: 0
+  growing: 0
+  canGrow: 0
   conversion: 0
 --- !u!1 &1223109527
 GameObject:
@@ -2588,7 +2598,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1223109527}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 13.149868, y: 15.558171, z: 14.657819}
+  m_LocalPosition: {x: 13, y: 15.558171, z: 14}
   m_LocalScale: {x: 4, y: 5, z: 4}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2607,10 +2617,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 63ec365fa3e41624f8967ebcd007c199, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  nearbyBuildings: []
   block: {fileID: 0}
   currentSeed: {fileID: 0}
-  t: 0
-  isGrown: 0
+  growing: 0
+  canGrow: 0
   conversion: 0
 --- !u!1 &1262905111
 GameObject:
@@ -2640,7 +2651,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1262905111}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 19.399868, y: 14.558171, z: 3.9078188}
+  m_LocalPosition: {x: 13, y: 14.558171, z: 3}
   m_LocalScale: {x: 4, y: 3, z: 4}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2659,10 +2670,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 63ec365fa3e41624f8967ebcd007c199, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  nearbyBuildings: []
   block: {fileID: 0}
   currentSeed: {fileID: 0}
-  t: 0
-  isGrown: 0
+  growing: 0
+  canGrow: 0
   conversion: 0
 --- !u!65 &1262905114
 BoxCollider:
@@ -2774,6 +2786,7 @@ MonoBehaviour:
   - {fileID: 1262905113}
   maxConversion: 100
   suspicion: 0
+  alerted: 0
 --- !u!4 &1306771765
 Transform:
   m_ObjectHideFlags: 0
@@ -2832,7 +2845,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1329495691}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 12.899868, y: 16.55817, z: 8.907819}
+  m_LocalPosition: {x: 13, y: 16.55817, z: 9}
   m_LocalScale: {x: 4, y: 7, z: 4}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2851,10 +2864,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 63ec365fa3e41624f8967ebcd007c199, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  nearbyBuildings: []
   block: {fileID: 0}
   currentSeed: {fileID: 0}
-  t: 0
-  isGrown: 0
+  growing: 0
+  canGrow: 0
   conversion: 0
 --- !u!65 &1329495694
 BoxCollider:
@@ -3403,7 +3417,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1677817422}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 18.649868, y: 15.558171, z: 8.407819}
+  m_LocalPosition: {x: 18.5, y: 15.558171, z: 9}
   m_LocalScale: {x: 4, y: 5, z: 4}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3422,10 +3436,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 63ec365fa3e41624f8967ebcd007c199, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  nearbyBuildings: []
   block: {fileID: 0}
   currentSeed: {fileID: 0}
-  t: 0
-  isGrown: 0
+  growing: 0
+  canGrow: 0
   conversion: 0
 --- !u!65 &1677817425
 BoxCollider:
@@ -3581,7 +3596,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1886339118}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 23.899868, y: 15.558171, z: 13.657819}
+  m_LocalPosition: {x: 24, y: 15.558171, z: 14}
   m_LocalScale: {x: 4, y: 5, z: 4}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3600,10 +3615,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 63ec365fa3e41624f8967ebcd007c199, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  nearbyBuildings: []
   block: {fileID: 0}
   currentSeed: {fileID: 0}
-  t: 0
-  isGrown: 0
+  growing: 0
+  canGrow: 1
   conversion: 0
 --- !u!1 &2012769936
 GameObject:
@@ -4025,7 +4041,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2098089150}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 24.649868, y: 16.55817, z: 8.657819}
+  m_LocalPosition: {x: 24, y: 16.55817, z: 9}
   m_LocalScale: {x: 4, y: 7, z: 4}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4044,8 +4060,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 63ec365fa3e41624f8967ebcd007c199, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  nearbyBuildings: []
   block: {fileID: 0}
   currentSeed: {fileID: 0}
-  t: 0
-  isGrown: 0
+  growing: 0
+  canGrow: 0
   conversion: 0

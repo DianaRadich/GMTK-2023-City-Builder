@@ -6,21 +6,16 @@ public class BuildingScript : TickingMonoBehaviour
 {
 
     public static BuildingScript currentBuilding;
+	public List<BuildingScript> nearbyBuildings = new List<BuildingScript>();
 	public BlockScript block;
     public Seed currentSeed;
     public bool growing;
+	public bool canGrow;
 	[Range(0.0f,1.0f)]
 	public float conversion;
 	MeshRenderer renderer;
 	MaterialPropertyBlock conversionMatBlock;
 
-	public void AddSeed(Seed s)
-	{
-		Debug.Log("Adding Seed " + s.name);
-		currentSeed = s;
-		growing = true;
-		setTickAmount(s.growTicks);
-	}
 	private void Start()
 	{
 		conversionMatBlock = new MaterialPropertyBlock();
@@ -28,31 +23,53 @@ public class BuildingScript : TickingMonoBehaviour
 		conversionMatBlock.SetFloat("_production", 0);
 		renderer = GetComponent<MeshRenderer>();
 		renderer.SetPropertyBlock(conversionMatBlock);
+
+		//Search for nearby buildings
+		for (int i = -1; i < 2; i++)
+		{
+			for (int j = -1; j < 2; j++)
+			{
+				Vector3 dir = new Vector3(i, 0, j);
+				RaycastHit hit;
+				Vector3 pos = transform.position; pos.y = 1;
+				if(Physics.Raycast(pos, dir, out hit, 8))
+				{
+					BuildingScript b = hit.collider.gameObject.GetComponent<BuildingScript>();
+					if (b != null)
+					{
+						nearbyBuildings.Add(b);
+					}
+				}
+				
+			}
+		}
+	}
+	public bool AddSeed(Seed s)
+	{
+		if (!canGrow) return false;
+		Debug.Log("Adding Seed " + s.name);
+		currentSeed = s;
+		growing = true;
+		setTickAmount(s.growTicks);
+		return true;
 	}
 
 	// Update is called once per frame
 	void Update()
     {
-        /*if(currentSeed != null)
-		{
-            if(tick < currentSeed.growTicks)
-			{
-				conversion = tick / currentSeed.growTicks;
-                if(tick >= currentSeed.growTicks)
-				{
-					plantGrown();
-				}
-			}
-		}*/
-		//conversionMatBlock.SetFloat("_conversion", conversion);
-		//renderer.SetPropertyBlock(conversionMatBlock);
+
 	}
 
 	void plantGrown()
 	{
 		GameManager.Seeds += currentSeed.growSeeds;
 		block.conversion += currentSeed.growConversion;
+		block.suspicion += currentSeed.suspicion;
 		growing = false;
+		foreach (BuildingScript building in nearbyBuildings)
+		{
+			building.canGrow = true;
+		}
 		conversionMatBlock.SetFloat("_conversion", 1);
 		setTickAmount(currentSeed.produceTicks);
 	}
@@ -84,7 +101,6 @@ public class BuildingScript : TickingMonoBehaviour
 				plantProduce();
 			}
 		}
-	
 	}
 
 	void HighlightBuilding()

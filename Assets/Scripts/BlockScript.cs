@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BlockScript : MonoBehaviour
+public class BlockScript : TickingMonoBehaviour
 {
     public static BlockScript curBlock;
     public List<BuildingScript> buildings = new List<BuildingScript>();
@@ -18,6 +18,7 @@ public class BlockScript : MonoBehaviour
     }
     public float maxConversion;
     public float suspicion;
+    public bool alerted;
 
 	private void Awake()
 	{
@@ -26,21 +27,21 @@ public class BlockScript : MonoBehaviour
             b.block = this;
 		}
         BlockScript.curBlock = this;
+        setTickAmount(5);
 	}
 
-	// Start is called before the first frame update
-	void Start()
-    {
-        
-    }
+	protected override void DoTickAction()
+	{
+		if(!alerted && suspicion >= .4f)
+		{
+            if(Random.value < .1f)
+			{
+                alerted = true;
+			}
+        }
+	}
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
-    void addConvserion(float amount)
+	void addConvserion(float amount)
 	{
         conversion += amount;
     }

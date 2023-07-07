@@ -10,6 +10,7 @@ public class Seed : ScriptableObject
 	public int growTicks;
 	public int growSeeds;
 	public int growConversion;
+	public float suspicion;
 	public int produceTicks;
 	public int produceSeeds;
 	public int produceConversion;

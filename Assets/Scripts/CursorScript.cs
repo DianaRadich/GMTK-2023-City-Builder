@@ -27,8 +27,11 @@ public class CursorScript : MonoBehaviour
                 if (BuildingScript.currentBuilding != null)
 				{
                     Debug.Log("Adding Seed");
-                    BuildingScript.currentBuilding.AddSeed(curSeed);
-                    GameManager.Seeds -= curSeed.cost;
+					if (BuildingScript.currentBuilding.AddSeed(curSeed))
+					{
+                        GameManager.Seeds -= curSeed.cost;
+                    }
+                    
 				}
                 Destroy(CurSeedObject);
                 CurSeedObject = null;
