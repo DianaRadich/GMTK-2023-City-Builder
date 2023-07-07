@@ -20,8 +20,9 @@ public class BlockScript : TickingMonoBehaviour
     public float suspicion;
     public bool alerted;
 
-	private void Awake()
+	protected override void Awake()
 	{
+        base.Awake();
 		foreach (BuildingScript b  in buildings)
 		{
             b.block = this;
@@ -29,12 +30,18 @@ public class BlockScript : TickingMonoBehaviour
         BlockScript.curBlock = this;
         setTickAmount(5);
 	}
+	protected override void OnTick()
+	{
+        Debug.Log("Tick");
+		base.OnTick();
+	}
 
 	protected override void DoTickAction()
 	{
+        Debug.Log("DoTick");
 		if(!alerted && suspicion >= .4f)
 		{
-            if(Random.value < .1f)
+            if(Random.value < 1)
 			{
                 alerted = true;
 			}

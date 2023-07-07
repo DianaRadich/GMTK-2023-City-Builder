@@ -5,20 +5,15 @@ using System;
 
 public class TickingMonoBehaviour : MonoBehaviour
 {
-
+	[SerializeField]
 	protected int tick;
+	[SerializeField]
 	protected int tickAmount;
 
-	private void Awake()
+	protected virtual void Awake()
 	{
 		GameManager.gameTick += OnTick;
 	}
-
-	// Update is called once per frame
-	void FixedUpdate()
-    {
-
-    }
 
 	protected virtual void OnTick()
 	{
