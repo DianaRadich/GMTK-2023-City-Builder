@@ -15,6 +15,8 @@ public class GameManager : MonoBehaviour
 	int maxConversion = 100;
 	float suspicion = .5f;
 
+	List<BlockScript> shownBlocks;
+
 	private void Awake()
 	{
 		if(_instance == null)
@@ -45,13 +47,29 @@ public class GameManager : MonoBehaviour
 		if (suspicion < 0) suspicion = 0;
 		foreach (BlockScript b in blocks)
 		{
-			b.gameObject.SetActive(true);
-			b.enabled = true;
-			b.GetComponent<BlockSelectScript>().enabled = true;
+			if (!b.completed)
+			{
+				b.gameObject.SetActive(true);
+				b.enabled = true;
+				b.GetComponent<BlockSelectScript>().enabled = true;
+			}
 		}
+		shownBlocks = blocks;
 	}
 	public void StartGame(BlockScript block)
 	{
+		if(shownBlocks != null)
+		{
+			foreach (BlockScript b in shownBlocks)
+			{
+				b.GetComponent<BlockSelectScript>().enabled = false;
+				if (b != block)
+				{
+					b.enabled = false;
+					b.gameObject.SetActive(false);
+				}
+			}
+		}
 		block.ActivateBlock(maxConversion, suspicion);
 		Camera.main.transform.parent.position = block.transform.position;
 		Camera.main.orthographicSize = 15;

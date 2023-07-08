@@ -28,6 +28,7 @@ public class BlockScript : TickingMonoBehaviour
     public float suspicion;
 	public float suspicionThreashold;
     public bool alerted;
+	public bool completed;
 
 	protected override void Awake()
 	{
@@ -89,11 +90,13 @@ public class BlockScript : TickingMonoBehaviour
 
 	void WinBlock()
 	{
+		completed = true;
 		GameManager._instance.WinGame(NeighborBlocks);
 		foreach (BuildingScript b in buildings)
 		{
 			b.enabled = false;
 		}
 		this.enabled = false;
+		gameObject.SetActive(false);
 	}
 }
