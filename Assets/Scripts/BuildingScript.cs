@@ -119,7 +119,7 @@ public class BuildingScript : TickingMonoBehaviour
 	{
 		GameManager.Seeds += currentSeed.produceSeeds;
 		block.conversion += currentSeed.produceConversion;
-		conversion += currentSeed.conversionRate;
+		addConversion(currentSeed.conversionRate);
 	}
 
 	void addConversion(int cr)

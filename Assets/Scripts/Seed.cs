@@ -16,7 +16,7 @@ public class Seed : ScriptableObject
 	[Tooltip("The block conversion added when the plant finishes growing")]
 	public int growConversion;
 	[Tooltip("The suspicion added when the plant finishes growing")]
-	public float suspicion;
+	public int suspicion;
 	[Tooltip("The time it takes to produce seeds after the plant grows")]
 	public int produceTicks;
 	[Tooltip("The amount of seeds the plant produces")]
