@@ -14,10 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SeedObject: {fileID: 8891791214479427898, guid: 17bb8a4bd0fe80f4f8085f558a87cccb, type: 3}
   cost: 0
-  growTicks: 3
-  growSeeds: 10
+  growTicks: 10
+  growSeeds: 5
   growConversion: 2
   suspicion: 0
-  produceTicks: 10
-  produceSeeds: 10
+  produceTicks: 30
+  produceSeeds: 1
   produceConversion: 1
+  conversionRate: 1

@@ -17,6 +17,7 @@ public class CursorScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         if(CurSeedObject != null)
 		{
             Vector3 mousePos = Input.mousePosition;
@@ -37,5 +38,12 @@ public class CursorScript : MonoBehaviour
                 CurSeedObject = null;
 			}
 		}
+        else if (BlockSelectScript.curBlock != null)
+        {
+            if (Input.GetMouseButtonUp(0))
+            {
+                BlockSelectScript.curBlock.SelectBlock();
+            }
+        }
     }
 }

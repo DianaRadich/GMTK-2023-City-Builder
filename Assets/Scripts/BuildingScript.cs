@@ -17,13 +17,21 @@ public class BuildingScript : TickingMonoBehaviour
 	MeshRenderer renderer;
 	MaterialPropertyBlock conversionMatBlock;
 
+	protected override void Awake()
+	{
+		base.Awake();
+		GetComponent<Collider>().enabled = true;
+	}
+
 	private void Start()
 	{
 		conversionMatBlock = new MaterialPropertyBlock();
 		conversionMatBlock.SetFloat("_conversion", conversion);
 		conversionMatBlock.SetFloat("_production", 0);
+		conversionMatBlock.SetFloat("_alpha", 1);
 		renderer = GetComponent<MeshRenderer>();
 		renderer.SetPropertyBlock(conversionMatBlock);
+		
 
 		//Search for nearby buildings
 		for (int i = -1; i < 2; i++)
@@ -40,8 +48,7 @@ public class BuildingScript : TickingMonoBehaviour
 					{
 						nearbyBuildings.Add(b);
 					}
-				}
-				
+				}				
 			}
 		}
 	}
@@ -119,6 +126,7 @@ public class BuildingScript : TickingMonoBehaviour
 		conversion += cr;
 		if(conversion >= 100)
 		{
+			block.conversion += 25;
 			removeAPG();
 		}
 	}
@@ -193,5 +201,12 @@ public class BuildingScript : TickingMonoBehaviour
 				RemoveHighlight();
 			}
 		}
+	}
+
+	void DisableBuilding()
+	{
+		conversionMatBlock.SetFloat("_alpha", .1f);
+		renderer.SetPropertyBlock(conversionMatBlock);
+		GetComponent<Collider>().enabled = false;
 	}
 }

@@ -12,6 +12,11 @@ public class TickingMonoBehaviour : MonoBehaviour
 
 	protected virtual void Awake()
 	{
+		
+	}
+
+	protected void OnEnable()
+	{
 		GameManager.gameTick += OnTick;
 	}
 
