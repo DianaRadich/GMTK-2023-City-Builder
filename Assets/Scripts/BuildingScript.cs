@@ -26,7 +26,7 @@ public class BuildingScript : TickingMonoBehaviour
 		if(source == null)
 		{
 			source = gameObject.AddComponent<AudioSource>();
-			source.spatialBlend = .9f;
+			source.spatialBlend = 1;
 			source.minDistance = 5;
 		}
 	}

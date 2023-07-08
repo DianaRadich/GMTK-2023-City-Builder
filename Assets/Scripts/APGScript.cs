@@ -30,6 +30,7 @@ public class APGScript : TickingMonoBehaviour
 	{
 		settingUp = true;
 		setTickAmount(setupTicks);
+		CameraScript.UISource.PlayOneShot(GameManager._instance.APGsound);
 	}
 
 	public void finishSetup()

@@ -17,8 +17,10 @@ MonoBehaviour:
   growTicks: 15
   growSeeds: 10
   growConversion: 3
-  suspicion: 5
+  suspicion: 20
   produceTicks: 10
   produceSeeds: 10
   produceConversion: 0
   conversionRate: 10
+  growSound: {fileID: 8300000, guid: ae6fbcc94c3cff344a4e9e31bb13f234, type: 3}
+  produceSound: {fileID: 8300000, guid: 5adac5ec45a73dc4ab6b18a420558c57, type: 3}

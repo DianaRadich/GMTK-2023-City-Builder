@@ -16,6 +16,7 @@ public class GameManager : MonoBehaviour
 	int suspicion = 50;
 
 	List<BlockScript> shownBlocks;
+	public AudioClip APGsound;
 
 	private void Awake()
 	{
