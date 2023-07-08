@@ -9,9 +9,15 @@ public class CameraScript : MonoBehaviour
     public float moveSpeed;
     public Vector3 cameraLookPos;
     Vector3 lastMosPos;
+    public static AudioSource UISource;
 
-    // Update is called once per frame
-    void Update()
+	private void Awake()
+	{
+        UISource = GetComponent<AudioSource>();
+	}
+
+	// Update is called once per frame
+	void Update()
     {
 		if (Input.GetMouseButtonDown(1))
 		{

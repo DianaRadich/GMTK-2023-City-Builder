@@ -7,6 +7,7 @@ public class CursorScript : MonoBehaviour
 
     public static GameObject CurSeedObject;
     public static Seed curSeed;
+    public AudioClip SeedDropSound;
 
     // Start is called before the first frame update
     void Start()
@@ -30,6 +31,7 @@ public class CursorScript : MonoBehaviour
                     Debug.Log("Adding Seed");
 					if (BuildingScript.currentBuilding.AddSeed(curSeed))
 					{
+                        CameraScript.UISource.PlayOneShot(SeedDropSound);
                         GameManager.Seeds -= curSeed.cost;
                     }
                     
