@@ -25,4 +25,6 @@ public class Seed : ScriptableObject
 	public int produceConversion;
 	[Tooltip("The rate the plant converts the building its on")]
 	public int conversionRate;
+	public AudioClip growSound;
+	public AudioClip produceSound;
 }

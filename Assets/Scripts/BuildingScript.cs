@@ -16,11 +16,19 @@ public class BuildingScript : TickingMonoBehaviour
 	public int conversion;
 	MeshRenderer renderer;
 	MaterialPropertyBlock conversionMatBlock;
+	AudioSource source;
 
 	protected override void Awake()
 	{
 		base.Awake();
 		GetComponent<Collider>().enabled = true;
+		source = GetComponent<AudioSource>();
+		if(source == null)
+		{
+			source = gameObject.AddComponent<AudioSource>();
+			source.spatialBlend = .9f;
+			source.minDistance = 5;
+		}
 	}
 
 	private void Start()
@@ -113,6 +121,7 @@ public class BuildingScript : TickingMonoBehaviour
 		curGrowth = currentSeed.growTicks;
 		conversionMatBlock.SetFloat("_conversion", 1);
 		setTickAmount(currentSeed.produceTicks);
+		source.PlayOneShot(currentSeed.growSound);
 	}
 
 	void plantProduce()
@@ -120,12 +129,13 @@ public class BuildingScript : TickingMonoBehaviour
 		GameManager.Seeds += currentSeed.produceSeeds;
 		block.conversion += currentSeed.produceConversion;
 		addConversion(currentSeed.conversionRate);
+		source.PlayOneShot(currentSeed.produceSound,.75f);
 	}
 
 	void addConversion(int cr)
 	{
 		conversion += cr;
-		if(conversion >= 100)
+		if(conversion >= 100 && (conversion - cr < 100))
 		{
 			block.conversion += 25;
 			removeAPG();

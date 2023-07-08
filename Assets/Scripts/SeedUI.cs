@@ -8,6 +8,8 @@ public class SeedUI : MonoBehaviour, IPointerDownHandler, IPointerEnterHandler, 
 
     public Seed seedType;
 	public GameObject popup;
+	public AudioClip HoverSound;
+	public AudioClip SelectSound;
 
 	private void Start()
 	{
@@ -24,11 +26,13 @@ public class SeedUI : MonoBehaviour, IPointerDownHandler, IPointerEnterHandler, 
 			GameObject curSeed = Instantiate(seedType.SeedObject, Camera.main.ScreenToWorldPoint(mousePos), Quaternion.identity);
 			CursorScript.CurSeedObject = curSeed;
 			CursorScript.curSeed = seedType;
+			CameraScript.UISource.PlayOneShot(SelectSound);
 		}
 	}
 
 	public void OnPointerEnter(PointerEventData eventData)
 	{
+		CameraScript.UISource.PlayOneShot(HoverSound);
 		popup.SetActive(true);
 	}
 
