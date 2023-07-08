@@ -28,7 +28,7 @@ public class BuildingScript : TickingMonoBehaviour
 		conversionMatBlock = new MaterialPropertyBlock();
 		conversionMatBlock.SetFloat("_conversion", conversion);
 		conversionMatBlock.SetFloat("_production", 0);
-		conversionMatBlock.SetFloat("_alpha", 1);
+		//conversionMatBlock.SetFloat("_alpha", 0);
 		renderer = GetComponent<MeshRenderer>();
 		renderer.SetPropertyBlock(conversionMatBlock);
 		
@@ -60,7 +60,8 @@ public class BuildingScript : TickingMonoBehaviour
 		curGrowth = 0;
 		growing = true;
 		setTickAmount(s.growTicks);
-
+		//conversionMatBlock.SetFloat("_alpha", .5f);
+		renderer.SetPropertyBlock(conversionMatBlock);
 		block.infected.Add(this);
 		return true;
 	}
@@ -205,7 +206,7 @@ public class BuildingScript : TickingMonoBehaviour
 
 	void DisableBuilding()
 	{
-		conversionMatBlock.SetFloat("_alpha", .1f);
+		//conversionMatBlock.SetFloat("_alpha", .1f);
 		renderer.SetPropertyBlock(conversionMatBlock);
 		GetComponent<Collider>().enabled = false;
 	}
