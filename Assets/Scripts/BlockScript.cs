@@ -11,6 +11,7 @@ public class BlockScript : TickingMonoBehaviour
 	public List<BuildingScript> infected = new List<BuildingScript>();
 	public List<APGScript> APGs = new List<APGScript>();
 
+	[SerializeField]
     private float _conversion;
     public float conversion
     {
@@ -25,8 +26,8 @@ public class BlockScript : TickingMonoBehaviour
 		}
     }
     public float maxConversion;
-    public float suspicion;
-	public float suspicionThreashold;
+    public int suspicion;
+	public int suspicionThreashold;
     public bool alerted;
 	public bool completed;
 
@@ -41,7 +42,7 @@ public class BlockScript : TickingMonoBehaviour
         setTickAmount(5);
 	}
 
-	public void ActivateBlock(int maxConv, float sus)
+	public void ActivateBlock(int maxConv, int sus)
 	{
 		GetComponent<Collider>().enabled = false;
 		maxConversion = maxConv;
@@ -51,6 +52,8 @@ public class BlockScript : TickingMonoBehaviour
 			b.enabled = true;
 			b.block = this;
 		}
+		curBlock = this;
+		fogScript.fog.setFogPos(transform.position);
 	}
 	protected override void OnTick()
 	{
@@ -63,18 +66,22 @@ public class BlockScript : TickingMonoBehaviour
         Debug.Log("DoTick");
 		if(!alerted && suspicion >= suspicionThreashold)
 		{
-            if(Random.value < suspicion - suspicionThreashold)
+            if((Random.value * 100) < suspicion - suspicionThreashold)
 			{
                 alerted = true;
 			}
 		}
 		else if (alerted)
 		{
-            if(Random.value < suspicion / APGs.Count && APGs.Count < 4)
+            if(((Random.value * 100) < suspicion / (APGs.Count > 0? APGs.Count : 1)) && APGs.Count < 4)
 			{
 				List<BuildingScript> free = buildings.Except(infected).ToList();
-				BuildingScript newBuilding = free[Random.Range(0, free.Count)];
-				newBuilding.AddAPG();
+				if(free.Count > 0)
+				{
+					BuildingScript newBuilding = free[Random.Range(0, free.Count)];
+					newBuilding.AddAPG();
+				}
+
 			}
 		}
 	}

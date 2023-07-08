@@ -59,12 +59,16 @@ public class APGScript : TickingMonoBehaviour
 			if(Random.value < moveChance)
 			{
 				List<BuildingScript> free = building.nearbyBuildings.FindAll(x => x.conversion < 100);
-				BuildingScript newBuilding = free[Random.Range(0, free.Count)];
-				
-				if (newBuilding.AddAPG(true))
+				if(free.Count > 0)
 				{
-					building.removeAPG();
-				}			
+					BuildingScript newBuilding = free[Random.Range(0, free.Count)];
+
+					if (newBuilding.AddAPG(true))
+					{
+						building.removeAPG();
+					}
+				}
+			
 			}
 		}
 	}

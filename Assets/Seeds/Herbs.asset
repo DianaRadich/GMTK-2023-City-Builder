@@ -10,15 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9aec2aea5cfc87d4698e9e79f2dcf1a3, type: 3}
-  m_Name: Seed2
+  m_Name: Herbs
   m_EditorClassIdentifier: 
-  SeedObject: {fileID: 8891791214479427898, guid: 2493cad76596950499e5995cc365e553, type: 3}
-  cost: 10
+  SeedObject: {fileID: 8891791214479427898, guid: 17bb8a4bd0fe80f4f8085f558a87cccb, type: 3}
+  cost: 100
   growTicks: 25
-  growSeeds: 20
-  growConversion: 25
-  suspicion: 0.2
-  produceTicks: 100
+  growSeeds: 10
+  growConversion: 1
+  suspicion: 3
+  produceTicks: 40
   produceSeeds: 10
-  produceConversion: 25
-  conversionRate: 5
+  produceConversion: 0
+  conversionRate: 1

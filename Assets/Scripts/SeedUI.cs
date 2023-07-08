@@ -3,10 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class SeedUI : MonoBehaviour, IPointerDownHandler
+public class SeedUI : MonoBehaviour, IPointerDownHandler, IPointerEnterHandler, IPointerExitHandler
 {
 
     public Seed seedType;
+	public GameObject popup;
+
+	private void Start()
+	{
+		popup.GetComponent<PlantPopupUI>().setUp(seedType);
+	}
 
 	public void OnPointerDown(PointerEventData eventData)
 	{
@@ -19,5 +25,15 @@ public class SeedUI : MonoBehaviour, IPointerDownHandler
 			CursorScript.CurSeedObject = curSeed;
 			CursorScript.curSeed = seedType;
 		}
+	}
+
+	public void OnPointerEnter(PointerEventData eventData)
+	{
+		popup.SetActive(true);
+	}
+
+	public void OnPointerExit(PointerEventData eventData)
+	{
+		popup.SetActive(false);
 	}
 }

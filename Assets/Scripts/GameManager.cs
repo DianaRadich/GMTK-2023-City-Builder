@@ -6,14 +6,14 @@ using System;
 public class GameManager : MonoBehaviour
 {
 	public static GameManager _instance;
-    public static int Seeds;
+    public static int Seeds = 50;
 
     public static event Action gameTick;
 	float t;
 	public float tickTime = 1;
 
 	int maxConversion = 100;
-	float suspicion = .5f;
+	int suspicion = 50;
 
 	List<BlockScript> shownBlocks;
 
@@ -22,6 +22,7 @@ public class GameManager : MonoBehaviour
 		if(_instance == null)
 		{
 			_instance = this;
+			Seeds = 50;
 		}
 		else
 		{
@@ -42,7 +43,7 @@ public class GameManager : MonoBehaviour
 	public void WinGame(List<BlockScript> blocks)
 	{
 		maxConversion += 50;
-		suspicion -= .05f;
+		suspicion -= 5;
 		Camera.main.orthographicSize = 30;
 		if (suspicion < 0) suspicion = 0;
 		foreach (BlockScript b in blocks)
