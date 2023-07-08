@@ -6,13 +6,14 @@ public class BuildingScript : TickingMonoBehaviour
 {
 
     public static BuildingScript currentBuilding;
+	public APGScript APG;
 	public List<BuildingScript> nearbyBuildings = new List<BuildingScript>();
 	public BlockScript block;
     public Seed currentSeed;
     public bool growing;
 	public bool canGrow;
-	[Range(0.0f,1.0f)]
-	public float conversion;
+	public int curGrowth;
+	public int conversion;
 	MeshRenderer renderer;
 	MaterialPropertyBlock conversionMatBlock;
 
@@ -46,18 +47,49 @@ public class BuildingScript : TickingMonoBehaviour
 	}
 	public bool AddSeed(Seed s)
 	{
-		if (!canGrow) return false;
+		if (!canGrow || currentSeed != null) return false;
 		Debug.Log("Adding Seed " + s.name);
 		currentSeed = s;
+		curGrowth = 0;
 		growing = true;
 		setTickAmount(s.growTicks);
+
+		block.infected.Add(this);
 		return true;
 	}
 
-	// Update is called once per frame
-	void Update()
-    {
+	public void removeSeed()
+	{
+		currentSeed = null;
+		growing = false;
+		block.infected.Remove(this);
+	}
 
+	public bool AddAPG(bool setUp = false, APGScript apg = null)
+	{
+		if (APG != null) return false;
+		if(apg == null)
+		{
+			APG = gameObject.AddComponent<APGScript>();
+		}
+		else
+		{
+			APG = apg;
+		}		
+		APG.building = this;
+		if (setUp) {
+			APG.finishSetup(); 
+		} else {
+			APG.StartSetup();
+		}
+		if (currentSeed != null) setTickAmount(currentSeed.growTicks);	
+		conversionMatBlock.SetFloat("_production", 0);
+		return true;
+	}
+	public void removeAPG()
+	{
+		Destroy(APG);
+		APG = null;
 	}
 
 	void plantGrown()
@@ -70,6 +102,7 @@ public class BuildingScript : TickingMonoBehaviour
 		{
 			building.canGrow = true;
 		}
+		curGrowth = currentSeed.growTicks;
 		conversionMatBlock.SetFloat("_conversion", 1);
 		setTickAmount(currentSeed.produceTicks);
 	}
@@ -78,14 +111,41 @@ public class BuildingScript : TickingMonoBehaviour
 	{
 		GameManager.Seeds += currentSeed.produceSeeds;
 		block.conversion += currentSeed.produceConversion;
+		conversion += currentSeed.conversionRate;
+	}
+
+	void addConversion(int cr)
+	{
+		conversion += cr;
+		if(conversion >= 100)
+		{
+			removeAPG();
+		}
 	}
 
 	protected override void OnTick()
 	{
 		base.OnTick();
-		conversion = (float)tick / (float)tickAmount;
-		conversionMatBlock.SetFloat(growing? "_conversion" : "_production", conversion);
+		if (growing)
+		{
+			curGrowth = tick;
+		}
+		float fill = (float)tick / (float)tickAmount;
+		conversionMatBlock.SetFloat(growing ? "_conversion" : "_production", fill);
 		renderer.SetPropertyBlock(conversionMatBlock);
+
+	}
+
+	public void hurtPlant(int amount)
+	{
+		curGrowth -= amount;
+		float fill = ((float)curGrowth / (float)tickAmount);
+		conversionMatBlock.SetFloat("_conversion", fill);
+		renderer.SetPropertyBlock(conversionMatBlock);
+		if(curGrowth <= 0)
+		{
+			removeSeed();
+		}
 	}
 
 	protected override void DoTickAction()
@@ -105,18 +165,33 @@ public class BuildingScript : TickingMonoBehaviour
 
 	void HighlightBuilding()
 	{
-
+		conversionMatBlock.SetFloat("_conversion", 1);
+		renderer.SetPropertyBlock(conversionMatBlock);
+	}
+	void RemoveHighlight()
+	{
+		conversionMatBlock.SetFloat("_conversion", 0);
+		renderer.SetPropertyBlock(conversionMatBlock);
 	}
 
 	private void OnMouseEnter()
 	{
-		currentBuilding = this;
+		
+		if(canGrow && currentSeed == null && CursorScript.CurSeedObject != null)
+		{
+			currentBuilding = this;
+			HighlightBuilding();
+		}
 	}
 	private void OnMouseExit()
 	{
 		if (currentBuilding == this)
 		{
 			currentBuilding = null;
+			if(canGrow && currentSeed == null && CursorScript.CurSeedObject != null)
+			{
+				RemoveHighlight();
+			}
 		}
 	}
 }

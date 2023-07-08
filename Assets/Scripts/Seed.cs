@@ -14,4 +14,5 @@ public class Seed : ScriptableObject
 	public int produceTicks;
 	public int produceSeeds;
 	public int produceConversion;
+	public int conversionRate;
 }

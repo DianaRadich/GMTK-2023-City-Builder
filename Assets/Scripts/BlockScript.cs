@@ -1,11 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class BlockScript : TickingMonoBehaviour
 {
     public static BlockScript curBlock;
     public List<BuildingScript> buildings = new List<BuildingScript>();
+	public List<BuildingScript> infected = new List<BuildingScript>();
+	public List<APGScript> APGs = new List<APGScript>();
 
     private float _conversion;
     public float conversion
@@ -41,11 +44,20 @@ public class BlockScript : TickingMonoBehaviour
         Debug.Log("DoTick");
 		if(!alerted && suspicion >= .4f)
 		{
-            if(Random.value < 1)
+            if(Random.value < suspicion - .4f)
 			{
                 alerted = true;
 			}
-        }
+		}
+		else if (alerted)
+		{
+            if(Random.value < suspicion / APGs.Count && APGs.Count < 1)
+			{
+				List<BuildingScript> free = buildings.Except(infected).ToList();
+				BuildingScript newBuilding = free[Random.Range(0, free.Count)];
+				newBuilding.AddAPG();
+			}
+		}
 	}
 
 	void addConvserion(float amount)
