@@ -17,7 +17,7 @@ MonoBehaviour:
   growTicks: 80
   growSeeds: 10
   growConversion: 1
-  suspicion: 3
+  suspicion: 5
   produceTicks: 40
   produceSeeds: 10
   produceConversion: 0

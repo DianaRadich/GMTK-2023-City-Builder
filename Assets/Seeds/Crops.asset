@@ -13,11 +13,11 @@ MonoBehaviour:
   m_Name: Crops
   m_EditorClassIdentifier: 
   SeedObject: {fileID: 8891791214479427898, guid: 2493cad76596950499e5995cc365e553, type: 3}
-  cost: 400
+  cost: 300
   growTicks: 100
   growSeeds: 10
   growConversion: 3
-  suspicion: 3
+  suspicion: 5
   produceTicks: 50
   produceSeeds: 10
   produceConversion: 0

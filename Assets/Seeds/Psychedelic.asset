@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Psychedelic
   m_EditorClassIdentifier: 
   SeedObject: {fileID: 0}
-  cost: 2000
+  cost: 1000
   growTicks: 0
   growSeeds: 0
   growConversion: 0
