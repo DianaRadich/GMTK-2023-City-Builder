@@ -15,10 +15,14 @@ public class GameManager : MonoBehaviour
 	int maxConversion = 100;
 	int suspicion = 50;
 
-	List<BlockScript> shownBlocks;
+	List<BlockScript> blocks = new List<BlockScript>();
+	BlockScript[] shownBlocks;
 	public AudioClip APGsound;
 	public GameObject APGIcon;
 	public GameObject BuildingIcon;
+
+	public GameObject[] blockObjects;
+	public BlockScript tutorialBlock;
 
 	private void Awake()
 	{
@@ -35,6 +39,39 @@ public class GameManager : MonoBehaviour
 	private void Start()
 	{
 		AudioManager._Instance.PlaySong("BGM");
+
+		List<BlockScript> BlocksToDo = new List<BlockScript>();
+		BlocksToDo.Add(tutorialBlock);
+		while (blocks.Count < 32)
+		{
+			BlockScript b = BlocksToDo[0];
+			if (b.NeighborBlocks == null || b.NeighborBlocks.Length == 0) b.NeighborBlocks = new BlockScript[4];
+			b.FindNearby();
+			for (int i = 0; i < 4; i++)
+			{
+				
+				if(b.NeighborBlocks[i] == null)
+				{
+					Vector3 spawnDif = new Vector3(22 * (i < 2 ? (i == 1 ? -1 : 1) : 0), 0,22 * (i >= 2 ? (i == 2 ? -1 : 1) : 0));
+					Vector3 spawnPos = b.transform.position + spawnDif;
+					BlockScript bs = Instantiate(blockObjects[UnityEngine.Random.Range(0, blockObjects.Length)], spawnPos, Quaternion.identity).GetComponent<BlockScript>();
+					b.NeighborBlocks[i] = bs;
+					blocks.Add(bs);
+					BlocksToDo.Add(bs);
+					bs.FindNearby();
+					bs.SPAWNER = b;
+					
+				}
+				//yield return new WaitForEndOfFrame();
+			}
+			BlocksToDo.RemoveAt(0);
+		}
+		foreach(BlockScript b in blocks)
+		{
+			b.gameObject.SetActive(false);
+		}
+		StartGame(tutorialBlock);
+		//yield return new WaitForSeconds(1);
 	}
 
 	private void FixedUpdate()
@@ -47,7 +84,7 @@ public class GameManager : MonoBehaviour
 		}
 	}
 
-	public void WinGame(List<BlockScript> blocks)
+	public void WinGame(BlockScript[] blocks)
 	{
 		maxConversion += 50;
 		suspicion -= 5;

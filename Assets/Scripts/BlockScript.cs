@@ -6,10 +6,13 @@ using UnityEngine;
 public class BlockScript : TickingMonoBehaviour
 {
     public static BlockScript curBlock;
-	public List<BlockScript> NeighborBlocks = new List<BlockScript>();
+	public BlockScript[] NeighborBlocks = new BlockScript[4];
     public List<BuildingScript> buildings = new List<BuildingScript>();
 	public List<BuildingScript> infected = new List<BuildingScript>();
 	public List<APGScript> APGs = new List<APGScript>();
+	public BlockScript SPAWNER;
+
+	public bool hasPlant;
 
 	[SerializeField]
     private float _conversion;
@@ -105,5 +108,28 @@ public class BlockScript : TickingMonoBehaviour
 		}
 		this.enabled = false;
 		gameObject.SetActive(false);
+	}
+
+	public void FindNearby()
+	{
+		if (NeighborBlocks == null || NeighborBlocks.Length == 0) NeighborBlocks = new BlockScript[4];
+		for (int i = 0; i < 4; i++)
+		{
+			if (NeighborBlocks[i] == null)
+			{
+				Vector3 spawnPos = new Vector3(transform.position.x + 22 * (i < 2 ? (i == 1 ? -1 : 1) : 0), 0, transform.position.z + 22 * (i >= 2 ? (i == 2 ? -1 : 1) : 0));
+				RaycastHit[] hits = Physics.RaycastAll(spawnPos + Vector3.up *50, Vector3.down);
+				Debug.DrawRay(spawnPos + Vector3.up, Vector3.up*25,Color.blue,4);
+				foreach (RaycastHit hit in hits)
+				{
+					BlockScript bs = hit.collider.GetComponent<BlockScript>();
+					if (bs != null)
+					{
+						NeighborBlocks[i] = bs;
+					}
+				}
+
+			}
+		}
 	}
 }

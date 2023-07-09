@@ -16,7 +16,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &417993853156149968
 Transform:
@@ -26,11 +26,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1046756635832946794}
   m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071067}
-  m_LocalPosition: {x: 0, y: 2.63, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: -0.30508468, z: 0}
+  m_LocalScale: {x: 0.20820059, y: 0.20980942, z: 0.07212404}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 6219862134485697353}
+  m_Father: {fileID: 2443002939187445324}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &3630702451077956981
@@ -102,7 +102,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &5287211023995641365
 Transform:
@@ -112,11 +112,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4761468936673445039}
   m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071067}
-  m_LocalPosition: {x: 0, y: 11.1, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: 0.30580592, z: 0}
+  m_LocalScale: {x: 0.20820059, y: 0.20980942, z: 0.07212404}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 6219862134485697353}
+  m_Father: {fileID: 2443002939187445324}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &9146857008178467248
@@ -200,10 +200,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 5287211023995641365}
-  - {fileID: 417993853156149968}
-  - {fileID: 8186754984863640271}
-  - {fileID: 6959784542101995445}
   - {fileID: 2443002939187445324}
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -224,7 +220,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &6959784542101995445
 Transform:
@@ -234,11 +230,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7772596707343082767}
   m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071067}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: -0.49477088, z: 0}
+  m_LocalScale: {x: 0.20820059, y: 0.20980942, z: 0.07212404}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 6219862134485697353}
+  m_Father: {fileID: 2443002939187445324}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &6285271083468812304
@@ -310,7 +306,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &8186754984863640271
 Transform:
@@ -320,11 +316,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8986855331565775569}
   m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071067}
-  m_LocalPosition: {x: 0, y: 6.83, z: -0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: -0.0021637361, z: 0}
+  m_LocalScale: {x: 0.20820059, y: 0.20980942, z: 0.07212404}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 6219862134485697353}
+  m_Father: {fileID: 2443002939187445324}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &5640767051929466757
@@ -411,9 +407,13 @@ Transform:
   m_LocalPosition: {x: 0, y: 6.86, z: 0}
   m_LocalScale: {x: 4.80306, y: 13.865003, z: 4.76623}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 5287211023995641365}
+  - {fileID: 417993853156149968}
+  - {fileID: 8186754984863640271}
+  - {fileID: 6959784542101995445}
   m_Father: {fileID: 6219862134485697353}
-  m_RootOrder: 4
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &8910874162922733961
 MeshFilter:
@@ -500,3 +500,4 @@ MonoBehaviour:
   canGrow: 0
   curGrowth: 0
   conversion: 0
+  icon: {fileID: 0}

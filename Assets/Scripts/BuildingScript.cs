@@ -60,10 +60,12 @@ public class BuildingScript : TickingMonoBehaviour
 				}				
 			}
 		}
+		StaticBatchingUtility.Combine(gameObject);
 	}
 	public bool AddSeed(Seed s)
 	{
-		if (!canGrow || currentSeed != null) return false;
+		if ((!canGrow && block.hasPlant) || currentSeed != null) return false;
+		block.hasPlant = true;
 		Debug.Log("Adding Seed " + s.name);
 		currentSeed = s;
 		curGrowth = 0;
@@ -127,6 +129,7 @@ public class BuildingScript : TickingMonoBehaviour
 		conversionMatBlock.SetFloat("_conversion", 1);
 		setTickAmount(currentSeed.produceTicks);
 		source.PlayOneShot(currentSeed.growSound);
+		
 	}
 
 	void plantProduce()
@@ -207,8 +210,7 @@ public class BuildingScript : TickingMonoBehaviour
 
 	private void OnMouseEnter()
 	{
-		
-		if(canGrow && currentSeed == null && CursorScript.CurSeedObject != null)
+		if((canGrow || !block.hasPlant) && currentSeed == null && CursorScript.CurSeedObject != null)
 		{
 			currentBuilding = this;
 			HighlightBuilding();
@@ -219,10 +221,11 @@ public class BuildingScript : TickingMonoBehaviour
 		if (currentBuilding == this)
 		{
 			currentBuilding = null;
-			if(canGrow && currentSeed == null && CursorScript.CurSeedObject != null)
+			RemoveHighlight();
+			/*if (canGrow && currentSeed == null && CursorScript.CurSeedObject != null)
 			{
 				RemoveHighlight();
-			}
+			}*/
 		}
 	}
 

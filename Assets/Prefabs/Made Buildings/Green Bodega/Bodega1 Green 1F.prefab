@@ -28,7 +28,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 9211038066987407282}
   - {fileID: 3049156989897952910}
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -64,9 +63,10 @@ Transform:
   m_LocalPosition: {x: 0, y: 1.1024094, z: -0.03}
   m_LocalScale: {x: 4.3250117, y: 2.3220599, z: 4.3816214}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 9211038066987407282}
   m_Father: {fileID: 8649078757547628847}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &7818668960907295608
 MeshFilter:
@@ -153,16 +153,29 @@ MonoBehaviour:
   canGrow: 0
   curGrowth: 0
   conversion: 0
+  icon: {fileID: 0}
 --- !u!1001 &8673536150379425881
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 8649078757547628847}
+    m_TransformParent: {fileID: 3049156989897952910}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: f3923267716af64409cb5fce3c4d77bc, type: 3}
       propertyPath: m_RootOrder
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: f3923267716af64409cb5fce3c4d77bc, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.23121326
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: f3923267716af64409cb5fce3c4d77bc, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.22822604
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: f3923267716af64409cb5fce3c4d77bc, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.43065214
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f3923267716af64409cb5fce3c4d77bc, type: 3}
       propertyPath: m_LocalPosition.x
@@ -170,11 +183,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f3923267716af64409cb5fce3c4d77bc, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -0.47475493
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f3923267716af64409cb5fce3c4d77bc, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 0.006846781
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f3923267716af64409cb5fce3c4d77bc, type: 3}
       propertyPath: m_LocalRotation.w
@@ -207,6 +220,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: f3923267716af64409cb5fce3c4d77bc, type: 3}
       propertyPath: m_Name
       value: bodega3_green
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: f3923267716af64409cb5fce3c4d77bc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f3923267716af64409cb5fce3c4d77bc, type: 3}
