@@ -10,6 +10,7 @@ public class APGScript : TickingMonoBehaviour
 	public int setupTicks = 100;
 	public int workingTicks = 10;
 	int conversionRemoveAmout = 5;
+	public IconScript icon;
 
 	private void Start()
 	{
@@ -19,10 +20,17 @@ public class APGScript : TickingMonoBehaviour
 			building.AddAPG(this);
 		}
 		building.block.APGs.Add(this);
+		RaycastHit hit;
+		Physics.Raycast(building.transform.position + new Vector3(0, 20, 0), Vector3.down, out hit);
+		icon = Instantiate<GameObject>(GameManager._instance.APGIcon, hit.point + new Vector3(0, 5, 0),Quaternion.identity).GetComponent<IconScript>();
 	}
 
 	private void OnDestroy()
 	{
+		if(icon != null)
+		{
+			Destroy(icon.gameObject);
+		}
 		building.block.APGs.Remove(this);
 	}
 
@@ -39,21 +47,25 @@ public class APGScript : TickingMonoBehaviour
 		setTickAmount(workingTicks);
 	}
 
+	protected override void OnTick()
+	{
+		base.OnTick();
+
+		icon.setIconPrecent((float)tick / (float)tickAmount);
+	}
+
 	protected override void DoTickAction()
 	{
 		if (settingUp)
 		{
 			finishSetup();
+			icon.background.color = new Color(1, 1, 1, .75f);
 		}else if(building.currentSeed != null)
 		{
 			building.hurtPlant(1);
 		}else if(building.conversion > 0)
 		{
-			building.conversion -= conversionRemoveAmout;
-			if(building.conversion < 0)
-			{
-				building.conversion = 0;
-			}
+			building.addConversion(-conversionRemoveAmout);
 		}
 		else
 		{
@@ -69,7 +81,6 @@ public class APGScript : TickingMonoBehaviour
 						building.removeAPG();
 					}
 				}
-			
 			}
 		}
 	}

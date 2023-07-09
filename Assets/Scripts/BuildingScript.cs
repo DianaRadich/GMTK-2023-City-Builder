@@ -17,6 +17,7 @@ public class BuildingScript : TickingMonoBehaviour
 	MeshRenderer renderer;
 	MaterialPropertyBlock conversionMatBlock;
 	AudioSource source;
+	public IconScript icon;
 
 	protected override void Awake()
 	{
@@ -71,6 +72,9 @@ public class BuildingScript : TickingMonoBehaviour
 		//conversionMatBlock.SetFloat("_alpha", .5f);
 		renderer.SetPropertyBlock(conversionMatBlock);
 		block.infected.Add(this);
+		RaycastHit hit;
+		Physics.Raycast(transform.position + new Vector3(0, 20, 0), Vector3.down, out hit);
+		icon = Instantiate<GameObject>(GameManager._instance.BuildingIcon, hit.point + new Vector3(0, 2, 0), Quaternion.identity).GetComponent<IconScript>();
 		return true;
 	}
 
@@ -79,6 +83,7 @@ public class BuildingScript : TickingMonoBehaviour
 		currentSeed = null;
 		growing = false;
 		block.infected.Remove(this);
+		//Destroy(icon.gameObject);
 	}
 
 	public bool AddAPG(bool setUp = false, APGScript apg = null)
@@ -132,13 +137,21 @@ public class BuildingScript : TickingMonoBehaviour
 		source.PlayOneShot(currentSeed.produceSound,.75f);
 	}
 
-	void addConversion(int cr)
+	public void addConversion(int cr)
 	{
 		conversion += cr;
+		icon.setIconPrecent((float)conversion / 100f);
 		if(conversion >= 100 && (conversion - cr < 100))
 		{
 			block.conversion += 25;
 			removeAPG();
+		}else if (conversion <= 0)
+		{
+			Destroy(icon.gameObject);
+			if(conversion < 0)
+			{
+				conversion = 0;
+			}
 		}
 	}
 
@@ -152,7 +165,6 @@ public class BuildingScript : TickingMonoBehaviour
 		float fill = (float)tick / (float)tickAmount;
 		conversionMatBlock.SetFloat(growing ? "_conversion" : "_production", fill);
 		renderer.SetPropertyBlock(conversionMatBlock);
-
 	}
 
 	public void hurtPlant(int amount)

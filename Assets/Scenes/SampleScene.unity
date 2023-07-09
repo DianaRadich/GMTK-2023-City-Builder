@@ -1326,6 +1326,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tickTime: 0.2
   APGsound: {fileID: 8300000, guid: d81aae7c95d22114b969d573ad22c563, type: 3}
+  APGIcon: {fileID: 2524308287815792494, guid: e56d2c7ce2e277d4696437852beac039, type: 3}
 --- !u!4 &466718130
 Transform:
   m_ObjectHideFlags: 0
@@ -2266,14 +2267,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 705507993}
-  m_LocalRotation: {x: 0.40821788, y: -0.23456968, z: 0.10938163, w: 0.8754261}
-  m_LocalPosition: {x: 0, y: 3, z: 0}
+  m_LocalRotation: {x: 0.48719427, y: -0.22348543, z: 0.13054329, w: 0.83405906}
+  m_LocalPosition: {x: 4.74, y: 14.31, z: -8.22}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+  m_LocalEulerAnglesHint: {x: 60.58, y: -30, z: 0}
 --- !u!114 &705507996
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2586,8 +2587,8 @@ MonoBehaviour:
   seedType: {fileID: 11400000, guid: 30cc7481f8e608c41981b4594504e229, type: 2}
   popup: {fileID: 1247880745}
   costText: {fileID: 530377262}
-  HoverSound: {fileID: 8300000, guid: 846d3622752c6424bb3bec0fb632d4de, type: 3}
-  SelectSound: {fileID: 8300000, guid: e18b2b55b7c719d4fbd02ee4ae14e9ad, type: 3}
+  HoverSound: {fileID: 8300000, guid: 5e61c28d2c6a0b64bbbfcd62b2517ee4, type: 3}
+  SelectSound: {fileID: 8300000, guid: cb52716c8d66ca344943a115b2b47bd8, type: 3}
 --- !u!114 &792548925
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2816,8 +2817,8 @@ MonoBehaviour:
   seedType: {fileID: 11400000, guid: 30cc7481f8e608c41981b4594504e229, type: 2}
   popup: {fileID: 1400407211}
   costText: {fileID: 618015588}
-  HoverSound: {fileID: 8300000, guid: 846d3622752c6424bb3bec0fb632d4de, type: 3}
-  SelectSound: {fileID: 8300000, guid: e18b2b55b7c719d4fbd02ee4ae14e9ad, type: 3}
+  HoverSound: {fileID: 8300000, guid: 5e61c28d2c6a0b64bbbfcd62b2517ee4, type: 3}
+  SelectSound: {fileID: 8300000, guid: cb52716c8d66ca344943a115b2b47bd8, type: 3}
 --- !u!114 &813169304
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3062,6 +3063,54 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 467616619729274294, guid: b7eeece2331c3d241846b4ac0eab7e2d, type: 3}
+      propertyPath: soundLibraryComplete.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 467616619729274294, guid: b7eeece2331c3d241846b4ac0eab7e2d, type: 3}
+      propertyPath: soundLibraryComplete.Array.data[0].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: c82e9203dd89a2b40b66cf2a8d51969c, type: 3}
+    - target: {fileID: 467616619729274294, guid: b7eeece2331c3d241846b4ac0eab7e2d, type: 3}
+      propertyPath: soundLibraryComplete.Array.data[0].name
+      value: BGM
+      objectReference: {fileID: 0}
+    - target: {fileID: 467616619729274294, guid: b7eeece2331c3d241846b4ac0eab7e2d, type: 3}
+      propertyPath: soundLibraryComplete.Array.data[1].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 65f19bde1580e9c40a9b5b86a01cc065, type: 3}
+    - target: {fileID: 467616619729274294, guid: b7eeece2331c3d241846b4ac0eab7e2d, type: 3}
+      propertyPath: soundLibraryComplete.Array.data[1].loop
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 467616619729274294, guid: b7eeece2331c3d241846b4ac0eab7e2d, type: 3}
+      propertyPath: soundLibraryComplete.Array.data[1].name
+      value: BGM LOOP
+      objectReference: {fileID: 0}
+    - target: {fileID: 467616619729274294, guid: b7eeece2331c3d241846b4ac0eab7e2d, type: 3}
+      propertyPath: soundLibraryComplete.Array.data[0].pitch
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 467616619729274294, guid: b7eeece2331c3d241846b4ac0eab7e2d, type: 3}
+      propertyPath: soundLibraryComplete.Array.data[1].pitch
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 467616619729274294, guid: b7eeece2331c3d241846b4ac0eab7e2d, type: 3}
+      propertyPath: soundLibraryComplete.Array.data[0].volume
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 467616619729274294, guid: b7eeece2331c3d241846b4ac0eab7e2d, type: 3}
+      propertyPath: soundLibraryComplete.Array.data[1].volume
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 467616619729274294, guid: b7eeece2331c3d241846b4ac0eab7e2d, type: 3}
+      propertyPath: soundLibraryComplete.Array.data[0].mixerGroup
+      value: 
+      objectReference: {fileID: 2188293151525686875, guid: 7407436a7f3c85b4cb46e602b4844eb9, type: 2}
+    - target: {fileID: 467616619729274294, guid: b7eeece2331c3d241846b4ac0eab7e2d, type: 3}
+      propertyPath: soundLibraryComplete.Array.data[1].mixerGroup
+      value: 
+      objectReference: {fileID: 2188293151525686875, guid: 7407436a7f3c85b4cb46e602b4844eb9, type: 2}
     - target: {fileID: 6357123017458269785, guid: b7eeece2331c3d241846b4ac0eab7e2d, type: 3}
       propertyPath: m_Name
       value: AudioManager
@@ -3322,8 +3371,8 @@ MonoBehaviour:
   seedType: {fileID: 11400000, guid: 30cc7481f8e608c41981b4594504e229, type: 2}
   popup: {fileID: 2037584236}
   costText: {fileID: 44116022}
-  HoverSound: {fileID: 8300000, guid: 846d3622752c6424bb3bec0fb632d4de, type: 3}
-  SelectSound: {fileID: 8300000, guid: e18b2b55b7c719d4fbd02ee4ae14e9ad, type: 3}
+  HoverSound: {fileID: 8300000, guid: 5e61c28d2c6a0b64bbbfcd62b2517ee4, type: 3}
+  SelectSound: {fileID: 8300000, guid: cb52716c8d66ca344943a115b2b47bd8, type: 3}
 --- !u!114 &943034400
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5065,7 +5114,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!23 &1493973238
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -5200,8 +5249,8 @@ MonoBehaviour:
   seedType: {fileID: 11400000, guid: 30cc7481f8e608c41981b4594504e229, type: 2}
   popup: {fileID: 1531842904}
   costText: {fileID: 1212328766}
-  HoverSound: {fileID: 8300000, guid: 846d3622752c6424bb3bec0fb632d4de, type: 3}
-  SelectSound: {fileID: 8300000, guid: e18b2b55b7c719d4fbd02ee4ae14e9ad, type: 3}
+  HoverSound: {fileID: 8300000, guid: 5e61c28d2c6a0b64bbbfcd62b2517ee4, type: 3}
+  SelectSound: {fileID: 8300000, guid: cb52716c8d66ca344943a115b2b47bd8, type: 3}
 --- !u!114 &1503341102
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5979,8 +6028,8 @@ MonoBehaviour:
   seedType: {fileID: 11400000, guid: 952e974c0916b1548a5c943b174e68a3, type: 2}
   popup: {fileID: 952200397}
   costText: {fileID: 227258517}
-  HoverSound: {fileID: 8300000, guid: 846d3622752c6424bb3bec0fb632d4de, type: 3}
-  SelectSound: {fileID: 8300000, guid: e18b2b55b7c719d4fbd02ee4ae14e9ad, type: 3}
+  HoverSound: {fileID: 8300000, guid: 5e61c28d2c6a0b64bbbfcd62b2517ee4, type: 3}
+  SelectSound: {fileID: 8300000, guid: cb52716c8d66ca344943a115b2b47bd8, type: 3}
 --- !u!114 &2012769939
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -14,9 +14,9 @@ public class BlockUI : MonoBehaviour
 	public void Update()
 	{
 		//convserionText.text = BlockScript.curBlock.conversion.ToString();
-		conversionBar.rectTransform.sizeDelta = new Vector2(523 * (BlockScript.curBlock.conversion / BlockScript.curBlock.maxConversion), 54);
+		conversionBar.rectTransform.sizeDelta = new Vector2(Mathf.Clamp(523 * (BlockScript.curBlock.conversion / BlockScript.curBlock.maxConversion),0,523), 54);
 		//suspicionText.text = BlockScript.curBlock.suspicion.ToString();
-		suspicionBar.rectTransform.sizeDelta = new Vector2(523 * ((float)BlockScript.curBlock.suspicion / 100f), 54);
+		suspicionBar.rectTransform.sizeDelta = new Vector2(Mathf.Clamp(523 * ((float)BlockScript.curBlock.suspicion / 100f), 0, 523), 54);
 	}
 
 }

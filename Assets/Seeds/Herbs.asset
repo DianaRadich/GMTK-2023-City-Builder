@@ -22,5 +22,5 @@ MonoBehaviour:
   produceSeeds: 10
   produceConversion: 0
   conversionRate: 1
-  growSound: {fileID: 8300000, guid: ae6fbcc94c3cff344a4e9e31bb13f234, type: 3}
+  growSound: {fileID: 8300000, guid: 9ac6de055abde944a982235c9e60b223, type: 3}
   produceSound: {fileID: 8300000, guid: 5adac5ec45a73dc4ab6b18a420558c57, type: 3}

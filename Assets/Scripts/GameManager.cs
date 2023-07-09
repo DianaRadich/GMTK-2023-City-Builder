@@ -17,6 +17,8 @@ public class GameManager : MonoBehaviour
 
 	List<BlockScript> shownBlocks;
 	public AudioClip APGsound;
+	public GameObject APGIcon;
+	public GameObject BuildingIcon;
 
 	private void Awake()
 	{
