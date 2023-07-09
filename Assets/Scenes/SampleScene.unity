@@ -1256,7 +1256,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5dc73714d2d728147b1d803f39133e90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tickTime: 0.1
+  tickTime: 0.05
   APGsound: {fileID: 8300000, guid: d81aae7c95d22114b969d573ad22c563, type: 3}
   APGIcon: {fileID: 2524308287815792494, guid: e56d2c7ce2e277d4696437852beac039, type: 3}
   BuildingIcon: {fileID: 7081998197393477470, guid: 70dec9fb3b46abd4a8728b5fac506a86, type: 3}

@@ -29,7 +29,7 @@ public class TutorialUI : MonoBehaviour
         TutorialInWorldUI ui = Instantiate<GameObject>(inGamePopup, hit.point + new Vector3(0, 2, 0), Quaternion.identity).GetComponent<TutorialInWorldUI>();
         if (type == BuildingEvent.eventType.PlantGrown)
         {
-            ui.setText("This plant has finished growing and is now producing seeds and convering the building over time. Keep placing more plants and take over the block");
+            ui.setText("This plant has finished growing and is now producing seeds and converting the building over time. Keep placing more plants and take over the block");
             shownGrown = true;
         }
         if (type == BuildingEvent.eventType.APGMade)

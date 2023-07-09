@@ -116,6 +116,7 @@ public class GameManager : MonoBehaviour
 			}
 		}
 		block.ActivateBlock(maxConversion, suspicion);
+		if (Seeds < 100) Seeds = 100;
 		Camera.main.transform.parent.position = block.transform.position;
 		Camera.main.orthographicSize = 15;
 	}

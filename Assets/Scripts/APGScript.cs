@@ -33,6 +33,11 @@ public class APGScript : TickingMonoBehaviour
 		}
 		building.block.APGs.Remove(this);
 	}
+	protected override void OnDisable()
+	{
+		base.OnDisable();
+		Destroy(icon.gameObject);
+	}
 
 	public void StartSetup()
 	{
