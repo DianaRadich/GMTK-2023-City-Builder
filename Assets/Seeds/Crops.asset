@@ -10,17 +10,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9aec2aea5cfc87d4698e9e79f2dcf1a3, type: 3}
-  m_Name: Herbs
+  m_Name: Crops
   m_EditorClassIdentifier: 
-  SeedObject: {fileID: 8891791214479427898, guid: 17bb8a4bd0fe80f4f8085f558a87cccb, type: 3}
-  cost: 200
-  growTicks: 80
+  SeedObject: {fileID: 8891791214479427898, guid: 2493cad76596950499e5995cc365e553, type: 3}
+  cost: 400
+  growTicks: 100
   growSeeds: 10
-  growConversion: 1
+  growConversion: 3
   suspicion: 3
-  produceTicks: 40
+  produceTicks: 50
   produceSeeds: 10
   produceConversion: 0
-  conversionRate: 1
+  conversionRate: 2
   growSound: {fileID: 8300000, guid: 9ac6de055abde944a982235c9e60b223, type: 3}
   produceSound: {fileID: 8300000, guid: 5adac5ec45a73dc4ab6b18a420558c57, type: 3}

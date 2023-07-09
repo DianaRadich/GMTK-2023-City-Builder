@@ -6,7 +6,7 @@ using System;
 public class GameManager : MonoBehaviour
 {
 	public static GameManager _instance;
-    public static int Seeds = 50;
+    public static int Seeds = 100;
 
     public static event Action gameTick;
 	float t;
@@ -25,7 +25,7 @@ public class GameManager : MonoBehaviour
 		if(_instance == null)
 		{
 			_instance = this;
-			Seeds = 50;
+			Seeds = 100;
 		}
 		else
 		{

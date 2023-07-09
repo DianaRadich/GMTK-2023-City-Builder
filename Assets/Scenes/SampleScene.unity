@@ -1327,6 +1327,7 @@ MonoBehaviour:
   tickTime: 0.2
   APGsound: {fileID: 8300000, guid: d81aae7c95d22114b969d573ad22c563, type: 3}
   APGIcon: {fileID: 2524308287815792494, guid: e56d2c7ce2e277d4696437852beac039, type: 3}
+  BuildingIcon: {fileID: 7081998197393477470, guid: 70dec9fb3b46abd4a8728b5fac506a86, type: 3}
 --- !u!4 &466718130
 Transform:
   m_ObjectHideFlags: 0
@@ -2307,11 +2308,47 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 943034397}
     m_Modifications:
+    - target: {fileID: 263965426527602783, guid: f7b02a0beb2e2c247829e9eca182605c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2094615675483497051, guid: f7b02a0beb2e2c247829e9eca182605c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5300199808202074764, guid: f7b02a0beb2e2c247829e9eca182605c, type: 3}
+      propertyPath: m_text
+      value: 'Instantly removes 5% suspicion
+
+        Can''t be planted
+
+'
+      objectReference: {fileID: 0}
+    - target: {fileID: 5300199808202074764, guid: f7b02a0beb2e2c247829e9eca182605c, type: 3}
+      propertyPath: m_fontSize
+      value: 22.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5300199808202074764, guid: f7b02a0beb2e2c247829e9eca182605c, type: 3}
+      propertyPath: m_enableWordWrapping
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5778763893824541397, guid: f7b02a0beb2e2c247829e9eca182605c, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 112.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5778763893824541397, guid: f7b02a0beb2e2c247829e9eca182605c, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -23.9
+      objectReference: {fileID: 0}
     - target: {fileID: 5945687811339578028, guid: f7b02a0beb2e2c247829e9eca182605c, type: 3}
       propertyPath: m_Name
       value: SeedPopup
       objectReference: {fileID: 0}
     - target: {fileID: 5945687811339578028, guid: f7b02a0beb2e2c247829e9eca182605c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6136416769451725683, guid: f7b02a0beb2e2c247829e9eca182605c, type: 3}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
@@ -2349,7 +2386,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8433313970100206707, guid: f7b02a0beb2e2c247829e9eca182605c, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 224
+      value: 174.5
       objectReference: {fileID: 0}
     - target: {fileID: 8433313970100206707, guid: f7b02a0beb2e2c247829e9eca182605c, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2584,7 +2621,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d77c2ef6c5074c4eb86b4f271653a3e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  seedType: {fileID: 11400000, guid: 30cc7481f8e608c41981b4594504e229, type: 2}
+  seedType: {fileID: 11400000, guid: f9a2238ba4bd0604bb6dacc3eb6d22ca, type: 2}
   popup: {fileID: 1247880745}
   costText: {fileID: 530377262}
   HoverSound: {fileID: 8300000, guid: 5e61c28d2c6a0b64bbbfcd62b2517ee4, type: 3}
@@ -2814,7 +2851,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d77c2ef6c5074c4eb86b4f271653a3e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  seedType: {fileID: 11400000, guid: 30cc7481f8e608c41981b4594504e229, type: 2}
+  seedType: {fileID: 11400000, guid: dbe326591fb481643b549271712d4484, type: 2}
   popup: {fileID: 1400407211}
   costText: {fileID: 618015588}
   HoverSound: {fileID: 8300000, guid: 5e61c28d2c6a0b64bbbfcd62b2517ee4, type: 3}
@@ -3269,8 +3306,8 @@ GameObject:
   - component: {fileID: 943034397}
   - component: {fileID: 943034401}
   - component: {fileID: 943034400}
-  - component: {fileID: 943034399}
   - component: {fileID: 943034398}
+  - component: {fileID: 943034402}
   m_Layer: 5
   m_Name: Psychedelics
   m_TagString: Untagged
@@ -3344,7 +3381,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 943034399}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: SeedUI, Assembly-CSharp
         m_MethodName: OnMouseDown
         m_Mode: 1
@@ -3356,23 +3393,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &943034399
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 943034396}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3d77c2ef6c5074c4eb86b4f271653a3e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  seedType: {fileID: 11400000, guid: 30cc7481f8e608c41981b4594504e229, type: 2}
-  popup: {fileID: 2037584236}
-  costText: {fileID: 44116022}
-  HoverSound: {fileID: 8300000, guid: 5e61c28d2c6a0b64bbbfcd62b2517ee4, type: 3}
-  SelectSound: {fileID: 8300000, guid: cb52716c8d66ca344943a115b2b47bd8, type: 3}
 --- !u!114 &943034400
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3411,6 +3431,23 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 943034396}
   m_CullTransparentMesh: 1
+--- !u!114 &943034402
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 943034396}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 515817a1eb6269648b2ad0e092b70545, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  seedType: {fileID: 11400000, guid: e90759c641bf92246a5118b7449721fd, type: 2}
+  popup: {fileID: 2037584236}
+  costText: {fileID: 44116022}
+  HoverSound: {fileID: 8300000, guid: 5e61c28d2c6a0b64bbbfcd62b2517ee4, type: 3}
+  SelectSound: {fileID: 8300000, guid: cb52716c8d66ca344943a115b2b47bd8, type: 3}
 --- !u!1 &945093274
 GameObject:
   m_ObjectHideFlags: 0
@@ -5246,7 +5283,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d77c2ef6c5074c4eb86b4f271653a3e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  seedType: {fileID: 11400000, guid: 30cc7481f8e608c41981b4594504e229, type: 2}
+  seedType: {fileID: 11400000, guid: 952e974c0916b1548a5c943b174e68a3, type: 2}
   popup: {fileID: 1531842904}
   costText: {fileID: 1212328766}
   HoverSound: {fileID: 8300000, guid: 5e61c28d2c6a0b64bbbfcd62b2517ee4, type: 3}
@@ -6025,7 +6062,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d77c2ef6c5074c4eb86b4f271653a3e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  seedType: {fileID: 11400000, guid: 952e974c0916b1548a5c943b174e68a3, type: 2}
+  seedType: {fileID: 11400000, guid: 30cc7481f8e608c41981b4594504e229, type: 2}
   popup: {fileID: 952200397}
   costText: {fileID: 227258517}
   HoverSound: {fileID: 8300000, guid: 5e61c28d2c6a0b64bbbfcd62b2517ee4, type: 3}

@@ -10,17 +10,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9aec2aea5cfc87d4698e9e79f2dcf1a3, type: 3}
-  m_Name: Weeds
+  m_Name: Psychedelic
   m_EditorClassIdentifier: 
-  SeedObject: {fileID: 8891791214479427898, guid: 2493cad76596950499e5995cc365e553, type: 3}
-  cost: 100
-  growTicks: 50
-  growSeeds: 10
-  growConversion: 3
+  SeedObject: {fileID: 0}
+  cost: 2000
+  growTicks: 0
+  growSeeds: 0
+  growConversion: 0
   suspicion: 5
-  produceTicks: 25
-  produceSeeds: 10
+  produceTicks: 0
+  produceSeeds: 0
   produceConversion: 0
-  conversionRate: 1
-  growSound: {fileID: 8300000, guid: 9ac6de055abde944a982235c9e60b223, type: 3}
-  produceSound: {fileID: 8300000, guid: 5adac5ec45a73dc4ab6b18a420558c57, type: 3}
+  conversionRate: 0
+  growSound: {fileID: 0}
+  produceSound: {fileID: 0}
