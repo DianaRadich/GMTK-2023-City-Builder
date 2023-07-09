@@ -239,6 +239,15 @@ public class BuildingScript : TickingMonoBehaviour
 		renderer.SetPropertyBlock(conversionMatBlock);
 		GetComponent<Collider>().enabled = false;
 	}
+
+	protected override void OnDisable()
+	{
+		base.OnDisable();
+		if(icon != null)
+		{
+			Destroy(icon.gameObject);
+		}		
+	}
 }
 
 public class BuildingEvent

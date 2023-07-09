@@ -20,7 +20,7 @@ public class TickingMonoBehaviour : MonoBehaviour
 		GameManager.gameTick += OnTick;
 	}
 
-	protected void OnDisable()
+	protected virtual void OnDisable()
 	{
 		GameManager.gameTick -= OnTick;
 	}

@@ -1256,7 +1256,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5dc73714d2d728147b1d803f39133e90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tickTime: 0.2
+  tickTime: 0.1
   APGsound: {fileID: 8300000, guid: d81aae7c95d22114b969d573ad22c563, type: 3}
   APGIcon: {fileID: 2524308287815792494, guid: e56d2c7ce2e277d4696437852beac039, type: 3}
   BuildingIcon: {fileID: 7081998197393477470, guid: 70dec9fb3b46abd4a8728b5fac506a86, type: 3}
@@ -3156,7 +3156,7 @@ MonoBehaviour:
   popup: {fileID: 1247880745}
   costText: {fileID: 530377262}
   HoverSound: {fileID: 8300000, guid: 5e61c28d2c6a0b64bbbfcd62b2517ee4, type: 3}
-  SelectSound: {fileID: 8300000, guid: cb52716c8d66ca344943a115b2b47bd8, type: 3}
+  SelectSound: {fileID: 8300000, guid: 77379892cea5faa4a8d25b09b66f7f3a, type: 3}
 --- !u!114 &792548925
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3386,7 +3386,7 @@ MonoBehaviour:
   popup: {fileID: 1400407211}
   costText: {fileID: 618015588}
   HoverSound: {fileID: 8300000, guid: 5e61c28d2c6a0b64bbbfcd62b2517ee4, type: 3}
-  SelectSound: {fileID: 8300000, guid: cb52716c8d66ca344943a115b2b47bd8, type: 3}
+  SelectSound: {fileID: 8300000, guid: 77379892cea5faa4a8d25b09b66f7f3a, type: 3}
 --- !u!114 &813169304
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3866,7 +3866,7 @@ MonoBehaviour:
   popup: {fileID: 2037584236}
   costText: {fileID: 44116022}
   HoverSound: {fileID: 8300000, guid: 5e61c28d2c6a0b64bbbfcd62b2517ee4, type: 3}
-  SelectSound: {fileID: 8300000, guid: cb52716c8d66ca344943a115b2b47bd8, type: 3}
+  SelectSound: {fileID: 8300000, guid: 77379892cea5faa4a8d25b09b66f7f3a, type: 3}
 --- !u!1 &945093274
 GameObject:
   m_ObjectHideFlags: 0
@@ -4211,7 +4211,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 080295016b1fe114ead0e55cee5dd361, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SeedDropSound: {fileID: 8300000, guid: e5d2a52a87936cc46a409cb76d599a1e, type: 3}
+  SeedDropSound: {fileID: 8300000, guid: cb52716c8d66ca344943a115b2b47bd8, type: 3}
 --- !u!114 &963194230
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4273,7 +4273,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: -1699167422330848540, guid: 7407436a7f3c85b4cb46e602b4844eb9, type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -5570,7 +5570,7 @@ Transform:
   m_GameObject: {fileID: 1493973236}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 6.075, z: 0}
-  m_LocalScale: {x: 300, y: 20, z: 300}
+  m_LocalScale: {x: 1000, y: 20, z: 1000}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -5646,7 +5646,7 @@ MonoBehaviour:
   popup: {fileID: 1531842904}
   costText: {fileID: 1212328766}
   HoverSound: {fileID: 8300000, guid: 5e61c28d2c6a0b64bbbfcd62b2517ee4, type: 3}
-  SelectSound: {fileID: 8300000, guid: cb52716c8d66ca344943a115b2b47bd8, type: 3}
+  SelectSound: {fileID: 8300000, guid: 77379892cea5faa4a8d25b09b66f7f3a, type: 3}
 --- !u!114 &1503341102
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6574,7 +6574,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: 15.860443, y: 0, z: 17.726288, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -6775,7 +6775,7 @@ MonoBehaviour:
   popup: {fileID: 952200397}
   costText: {fileID: 227258517}
   HoverSound: {fileID: 8300000, guid: 5e61c28d2c6a0b64bbbfcd62b2517ee4, type: 3}
-  SelectSound: {fileID: 8300000, guid: cb52716c8d66ca344943a115b2b47bd8, type: 3}
+  SelectSound: {fileID: 8300000, guid: 77379892cea5faa4a8d25b09b66f7f3a, type: 3}
 --- !u!114 &2012769939
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7017,7 +7017,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 33.8
+  m_fontSize: 32.2
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -7053,7 +7053,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: 16.79329, y: 0, z: 18.65924, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
