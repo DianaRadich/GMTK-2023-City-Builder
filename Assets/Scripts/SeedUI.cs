@@ -9,7 +9,7 @@ public class SeedUI : MonoBehaviour, IPointerDownHandler, IPointerEnterHandler, 
 
     public Seed seedType;
 	public GameObject popup;
-	TMP_Text costText;
+	public TMP_Text costText;
 	public AudioClip HoverSound;
 	public AudioClip SelectSound;
 

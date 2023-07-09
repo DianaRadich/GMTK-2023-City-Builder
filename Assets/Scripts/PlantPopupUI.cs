@@ -5,8 +5,8 @@ using TMPro;
 
 public class PlantPopupUI : MonoBehaviour
 {
-	public TMP_Text nameText;
-	public TMP_Text costText;
+	//public TMP_Text nameText;
+	//public TMP_Text costText;
 	public TMP_Text suspicionText;
 	public TMP_Text growTicksText;
 	public TMP_Text growSeedsText;
@@ -18,8 +18,8 @@ public class PlantPopupUI : MonoBehaviour
 
 	public void setUp(Seed s)
 	{
-		nameText.text = s.name;
-		costText.text = "Cost: " + s.cost.ToString();
+		//nameText.text = s.name;
+		//costText.text = "Cost: " + s.cost.ToString();
 		growTicksText.text = "Growth: " + s.growTicks.ToString();
 		growSeedsText.text = "Seed Production: " + s.growSeeds.ToString();
 		//growConversionText.text = s.growConversion.ToString();
