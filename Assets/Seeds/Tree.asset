@@ -13,11 +13,11 @@ MonoBehaviour:
   m_Name: Tree
   m_EditorClassIdentifier: 
   SeedObject: {fileID: 8891791214479427898, guid: 2493cad76596950499e5995cc365e553, type: 3}
-  cost: 600
+  cost: 400
   growTicks: 120
   growSeeds: 10
   growConversion: 3
-  suspicion: 1
+  suspicion: 3
   produceTicks: 60
   produceSeeds: 10
   produceConversion: 0
