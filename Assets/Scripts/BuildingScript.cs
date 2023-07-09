@@ -19,6 +19,8 @@ public class BuildingScript : TickingMonoBehaviour
 	AudioSource source;
 	public IconScript icon;
 
+	public static event System.Action<BuildingEvent> events;
+
 	protected override void Awake()
 	{
 		base.Awake();
@@ -77,6 +79,7 @@ public class BuildingScript : TickingMonoBehaviour
 		RaycastHit hit;
 		Physics.Raycast(transform.position + new Vector3(0, 20, 0), Vector3.down, out hit);
 		icon = Instantiate<GameObject>(GameManager._instance.BuildingIcon, hit.point + new Vector3(0, 2, 0), Quaternion.identity).GetComponent<IconScript>();
+		events?.Invoke(new BuildingEvent(BuildingEvent.eventType.PlantPlaced, this));
 		return true;
 	}
 
@@ -107,6 +110,7 @@ public class BuildingScript : TickingMonoBehaviour
 		}
 		if (currentSeed != null) setTickAmount(currentSeed.growTicks);	
 		conversionMatBlock.SetFloat("_production", 0);
+		events?.Invoke(new BuildingEvent(BuildingEvent.eventType.APGMade, this));
 		return true;
 	}
 	public void removeAPG()
@@ -129,7 +133,7 @@ public class BuildingScript : TickingMonoBehaviour
 		conversionMatBlock.SetFloat("_conversion", 1);
 		setTickAmount(currentSeed.produceTicks);
 		source.PlayOneShot(currentSeed.growSound);
-		
+		events?.Invoke(new BuildingEvent(BuildingEvent.eventType.PlantGrown, this));
 	}
 
 	void plantProduce()
@@ -234,5 +238,22 @@ public class BuildingScript : TickingMonoBehaviour
 		//conversionMatBlock.SetFloat("_alpha", .1f);
 		renderer.SetPropertyBlock(conversionMatBlock);
 		GetComponent<Collider>().enabled = false;
+	}
+}
+
+public class BuildingEvent
+{
+	public enum eventType
+	{
+		PlantPlaced = 0,
+		PlantGrown = 1,
+		APGMade = 2
+	}
+	public eventType type;
+	public BuildingScript building;
+	public BuildingEvent(eventType t, BuildingScript b)
+	{
+		type = t;
+		building = b;
 	}
 }
