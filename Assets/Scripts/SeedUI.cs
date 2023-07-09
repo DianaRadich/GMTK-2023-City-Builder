@@ -2,18 +2,21 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using TMPro;
 
 public class SeedUI : MonoBehaviour, IPointerDownHandler, IPointerEnterHandler, IPointerExitHandler
 {
 
     public Seed seedType;
 	public GameObject popup;
+	TMP_Text costText;
 	public AudioClip HoverSound;
 	public AudioClip SelectSound;
 
 	private void Start()
 	{
 		popup.GetComponent<PlantPopupUI>().setUp(seedType);
+		costText.text = seedType.cost + " Seeds";
 	}
 
 	public void OnPointerDown(PointerEventData eventData)

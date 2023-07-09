@@ -16,6 +16,6 @@ public class SeedCountUI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        text.text = GameManager.Seeds.ToString();
+        text.text = "Seeds: " + GameManager.Seeds.ToString();
     }
 }
