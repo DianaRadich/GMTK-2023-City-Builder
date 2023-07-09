@@ -30,6 +30,10 @@ public class GameManager : MonoBehaviour
 			Destroy(gameObject);
 		}
 	}
+	private void Start()
+	{
+		AudioManager._Instance.PlaySong("BGM");
+	}
 
 	private void FixedUpdate()
 	{
